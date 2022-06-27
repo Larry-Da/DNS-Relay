@@ -1,4 +1,4 @@
-SRCS := *.c
+SRCS := ./src/*.c
 OBJS := *.o
 ${OBJS}:${SRCS}
 	gcc -std=gnu99 -pthread -c ${SRCS}
