@@ -145,7 +145,7 @@ enum TYPE normal_handling(Response **response, DNSHeader *header, DNSQuestion *q
                     break;
                 usleep(1);
             }
-            debug_show_local_DNS(copy_header_for_debug, question, "10.3.9.44", recv_num, copy_buffer_for_debug, 1, 0);
+            debug_show_local_DNS(copy_header_for_debug, question, serverIP, recv_num, copy_buffer_for_debug, 1, 0);
             if(get_local_success == 0)
             {
                 (*response)->header = header;
@@ -177,7 +177,7 @@ enum TYPE normal_handling(Response **response, DNSHeader *header, DNSQuestion *q
 
         }
         if(need_local_DNS)
-            debug_show_local_DNS((*response)->header, (*response)->question, "10.3.9.44", *response_length, buf, 1, 0);
+            debug_show_local_DNS((*response)->header, (*response)->question, serverIP, *response_length, buf, 1, 0);
 
 
         pthread_mutex_unlock(&mutex_lock);
